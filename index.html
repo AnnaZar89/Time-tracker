@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Time tracker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+  <link rel='stylesheet' href='style.css'>
+
+
+
+</head>
+
+<body>
+  <container>
+    <section class='targets'>
+      <div class='label'>today's targets:</div>
+      <div class='targetsOfTheDay'>
+        <div class='target'>
+          <div class='targetsName'>work-day:</div>
+          <div class='hoursAndMinutes'><input class='hoursWorkingDay' type="number" value='8' min='0' max='24'><span>h</span><input class='minutesWorkingDay' type="number" value='00' min='00' max='59'><span>min</span></div>
+
+        </div>
+        <!--        <div class='errorElement'>* Wrong value</div>-->
+        <div class='target'>
+          <div class='targetsName'>production:</div>
+          <div class='hoursAndMinutes'><input class='hoursOnProduction' type="number" value='6' min='0' max='24'><span>h</span><input class='minutesOnProduction' type="number" value='17' min='0' max='59'><span>min</span></div>
+        </div>
+
+        <div class='target'>
+          <div class='targetsName'>% of non-productive time:</div>
+          <div class='hoursAndMinutes'>
+            <input class='nonProductiveTimeInPercent' type="number" value='11' min='0' max='100'>
+            <span>%</span>
+          </div>
+        </div>
+        <div class='target'>
+          <div class='targetsName'>training:</div>
+          <div class='hoursAndMinutes'><input class='hoursTraining' type="number" value='0' min='0' max='24'><span>h</span><input class='minutesTraining' type="number" value='0' min='0' max='59'><span>min</span></div>
+        </div>
+        <div class='target'>
+          <div class='targetsName'>npt in minutes:</div>
+          <div class='hoursAndMinutes'>
+            <input class='minutesOfNpt' type="number" value="53" min='0'> <span>min</span>
+          </div>
+        </div>
+        <div class='target'>
+          <div class='targetsName'>break:</div>
+          <div class='hoursAndMinutes'>
+            <input class='minutesOfBreak' type="number" value='50' min='0'> <span>min</span>
+          </div>
+        </div>
+        <button class='reset'>Reset</button>
+        <div class='errorElement'>* Wrong value</div>
+      </div>
+    </section>
+    <section class='status'>
+      <div class='label'>your actual status:</div>
+      <div class='statusAndTimer'>
+        <div class='chooseYourStatus'>
+          <span>Choose your status:</span>
+
+          <select class='statusToPick'>
+            <option value='Production'>Production</option>
+            <option value='Non-productive time'>Non-productive time</option>
+            <option value='Training'>Training</option>
+            <option value='Break'>Break</option>
+            <option value='Offline' selected>Offline</option>
+          </select>
+        </div>
+        <div class='timer'>
+          <p class='stopwatchValues'>00:00:00</p>
+          <div class='buttons'>
+
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+    <section class='results'>
+      <div class='label'>yours results today:</div>
+      <div class='actualResultsAndToggleSwitch'>
+        <div class='actualResults'>
+          <div class='timeSpentOnGivenStatus'>
+            <div class='givenStatus'>
+              <div class='givenStatusLabel'>work-day:</div>
+              <div class='givenStatusTime'>00 h 00 min 00 sec</div>
+            </div>
+            <div class='givenStatus'>
+              <div class='givenStatusLabel'>production time:</div>
+              <div class='givenStatusTime'>00 h 00 min 00 sec</div>
+            </div>
+            <div class='givenStatus'>
+              <div class='givenStatusLabel'>non-productive time:</div>
+              <div class='givenStatusTime'>00 h 00 min 00 sec</div>
+            </div>
+            <div class='givenStatus'>
+              <div class='givenStatusLabel'>training:</div>
+              <div class='givenStatusTime'>00 h 00 min 00 sec</div>
+            </div>
+            <div class='givenStatus'>
+              <div class='givenStatusLabel'>break:</div>
+              <div class='givenStatusTime'>00 h 00 min 00 sec</div>
+            </div>
+          </div>
+        </div>
+
+        <div class='toggleSwitch'>
+          <span class='dailyResults'>daily results</span>
+          <label class='switch'>
+            <input type='checkbox'>
+            <span class='slider round'></span>
+          </label>
+          <span class='weeklyResults'>weekly results</span>
+        </div>
+      </div>
+    </section>
+  </container>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/date-fns/1.30.1/date_fns.min.js" integrity="sha512-F+u8eWHrfY8Xw9BLzZ8rG/0wIvs0y+JyRJrXjp3VjtFPylAEEGwKbua5Ip/oiVhaTDaDs4eU2Xtsxjs/9ag2bQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src='script.js'></script>
+</body>
+
+</html>

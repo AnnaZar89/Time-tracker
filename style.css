@@ -1,0 +1,236 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+container {
+  display: flex;
+  justify-content: space-around;
+  width: 90vw;
+  height: 85vh;
+  padding: 1%;
+  font-family: 'Ubuntu', sans-serif;
+
+  background-color: hsla(0, 1%, 77%, 0.43);
+}
+
+section {
+  width: 30%;
+}
+
+container .targets {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+
+  height: 15vh;
+  margin-bottom: 8%;
+  color: white;
+  text-align: center;
+  line-height: 15vh;
+
+}
+
+input[type="number"] {
+  border: none;
+  background-color: hsla(0, 1%, 77%, 0.43);
+
+}
+
+input[type="number"]:focus {
+
+  outline: none;
+
+}
+
+.targets .label {
+  background-color: #dd005d;
+
+
+}
+
+.targets .targetsOfTheDay {
+  padding: 5%;
+  background-color: white;
+  color: #dd005d;
+  font-weight: 600;
+}
+
+.targetsOfTheDay .target {
+  display: flex;
+  margin-bottom: 8%;
+}
+
+.target .targetsName {
+  width: 75%;
+}
+
+.hoursAndMinutes {
+  display: flex;
+  width: 45%;
+
+  justify-content: flex-end;
+
+}
+
+.hoursAndMinutes input {
+  width: 45%;
+  margin-right: 2%;
+  margin-left: 3%;
+  padding: 2%;
+  color: #dd005d;
+
+}
+
+.hoursAndMinutes input:focus {
+  color: #dd005d;
+}
+
+.reset {
+  width: 80px;
+  height: 25px;
+  font-size: 16px;
+  font-weight: 550;
+  color: #dd005d;
+  /*  border-color: #dd005d;*/
+  border: 1px solid #dd005d;
+  border-radius: 25px;
+  font-family: 'Ubuntu', sans-serif;
+
+}
+
+.reset:hover {
+  background-color: #dd005d;
+  color: white;
+  cursor: pointer;
+}
+
+.status .label {
+  background-color: darkorange;
+}
+
+.status input {
+  width: 100%;
+}
+
+.status .statusAndTimer {
+  padding: 5%;
+  background-color: white;
+  color: darkorange;
+  font-weight: 600
+}
+
+.chooseYourStatus span {
+  display: inline-block;
+  margin-bottom: 5%;
+}
+
+
+
+.results .label {
+  background-color: #2196F3;
+}
+
+.results .actualResultsAndToggleSwitch {
+  padding: 5%;
+  background-color: white;
+  color: #2196F3;
+  font-weight: 600
+}
+
+.actualResultsAndToggleSwitch .actualResults {
+  margin-bottom: 30%;
+}
+
+.timeSpentOnGivenStatus .givenStatus {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5%;
+}
+
+
+/*toggle switch*/
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 35px;
+  height: 18px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 16px;
+  top: 2px;
+  left: 1px;
+  bottom: 0px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: skyblue;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px skyblue;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(16px);
+  -ms-transform: translateX(17px);
+  transform: translateX(17px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.errorElement {
+  color: white;
+  font-size: 13px;
+  text-transform: uppercase;
+  /*  margin-left: 194px;*/
+  margin-left: 63%;
+  margin-bottom: 1%;
+  padding-left: 2%;
+  /*  background-color: #dd005d;*/
+  color: white;
+}
