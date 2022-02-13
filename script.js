@@ -133,6 +133,7 @@ function displayTime(hour, minutes, seconds) {
 }
 
 
+let arrayWithStatusFiltered = [];
 
 function updateResults() {
   //  clearInterval(stopwatch.intervalId);
@@ -144,32 +145,39 @@ function updateResults() {
 
   });
   state.currentStatus = list.value;
-  console.log(state.results);
+
 
   let getArrayOfProductionResults = state.results.filter(arrayWithStatus => arrayWithStatus.status === 'Production');
   let getArrayOfNPTResults = state.results.filter(arrayWithStatus => arrayWithStatus.status === 'Non-productive time');
   let getArrayOfTrainingResults = state.results.filter(arrayWithStatus => arrayWithStatus.status === 'Training');
   let getArrayOfBreakResults = state.results.filter(arrayWithStatus => arrayWithStatus.status === 'Break');
-  let getArrayOfProductionValues = getArrayOfProductionResults.map(value => value.time);
-  sumOfProductionValues = getArrayOfProductionValues.reduce((acc, value) => acc + value, 0);
+
+  console.log(getArrayOfProductionResults);
+
+
+  let getArrayOfProductionValues = getTimestamp(getArrayOfProductionResults);
+  console.log(getArrayOfProductionValues);
+  sumOfProductionValues = sumOfStatusTime(getArrayOfProductionValues);
+
   let arrayOfConvertedProductionValues = convertion(sumOfProductionValues);
   document.getElementsByClassName('givenStatusTime')[1].innerHTML = `${arrayOfConvertedProductionValues[0]} h ${arrayOfConvertedProductionValues[1]} min ${arrayOfConvertedProductionValues[2]} sec`;
 
-  let getArrayOfNPTValues = getArrayOfNPTResults.map(value => value.time);
-  sumOfNPTValues = getArrayOfNPTValues.reduce((acc, value) => acc + value, 0);
+
+  let getArrayOfNPTValues = getTimestamp(getArrayOfNPTResults);
+  sumOfNPTValues = sumOfStatusTime(getArrayOfNPTValues);
   let arrayOfConvertedNPTValues = convertion(sumOfNPTValues);
   document.getElementsByClassName('givenStatusTime')[2].innerHTML = `${arrayOfConvertedNPTValues[0]} h ${arrayOfConvertedNPTValues[1]} min ${arrayOfConvertedNPTValues[2]} sec`;
 
 
 
-  let getArrayOfTrainingValues = getArrayOfTrainingResults.map(value => value.time);
-  sumOfTrainingValues = getArrayOfTrainingValues.reduce((acc, value) => acc + value, 0);
+  let getArrayOfTrainingValues = getTimestamp(getArrayOfTrainingResults);
+  sumOfTrainingValues = sumOfStatusTime(getArrayOfTrainingValues);
   //      console.log(sumOfTrainingValues);
   let arrayOfConvertedTrainingValues = convertion(sumOfTrainingValues);
   document.getElementsByClassName('givenStatusTime')[3].innerHTML = `${arrayOfConvertedTrainingValues[0]} h ${arrayOfConvertedTrainingValues[1]} min ${arrayOfConvertedTrainingValues[2]} sec`;
 
-  let getArrayOfBreakValues = getArrayOfBreakResults.map(value => value.time);
-  sumOfBreakValues = getArrayOfBreakValues.reduce((acc, value) => acc + value, 0);
+  let getArrayOfBreakValues = getTimestamp(getArrayOfBreakResults);
+  sumOfBreakValues = sumOfStatusTime(getArrayOfBreakValues);
   let arrayOfConvertedBreakValues = convertion(sumOfBreakValues);
 
   document.getElementsByClassName('givenStatusTime')[4].innerHTML = `${arrayOfConvertedBreakValues[0]} h ${arrayOfConvertedBreakValues[1]} min ${arrayOfConvertedBreakValues[2]} sec`;
@@ -235,28 +243,22 @@ function updateWeeklyResults() {
 };
 
 
+function filterByStatus(status) {
+  return state.results.filter(arrayWithStatus => arrayWithStatus.status === 'Production');
+}
+
+//console.log(window.dateFns);
+
+//console.log(window.dateFns.format(new Date(), 'DD-MM-YYYY'));
 
 
-console.log(window.dateFns);
+function getTimestamp(array) {
+  return array.map(value => value.time);
+}
 
-console.log(window.dateFns.format(new Date(), 'DD-MM-YYYY'));
-
-//=> "Today is a Wednesday"
-
-/*formatDistance(subDays(new Date(), 3), new Date(), {
-  addSuffix: true
-//})*/
-//=> "3 days ago"
-
-//formatRelative(subDays(new Date(), 3), new Date())
-//=> "last Friday at 7:26 p.m."
-
-
-
-
-
-
-
+function sumOfStatusTime(arrayOfTimes) {
+  return arrayOfTimes.reduce((acc, value) => acc + value, 0);
+}
 
 workDayHours.addEventListener('input', getProductionTime)
 workDayMinutes.addEventListener('input', getProductionTime)
