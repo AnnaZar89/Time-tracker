@@ -10,25 +10,20 @@ let minutesOfBreak = document.querySelector('.minutesOfBreak');
 let labelInResults = document.querySelector('.results .label');
 let checkbox = document.querySelector('.switch input');
 let buttonReset = document.querySelector('.reset');
-
 let sumOfProductionValues = 0;
 let sumOfNPTValues = 0;
 let sumOfTrainingValues = 0;
 let sumOfBreakValues = 0;
-
-
 let workDayConverted = [];
 let arrayOfConvertedProductionValues = [];
 let arrayOfConvertedNPTValues = [];
 let arrayOfConvertedTrainingValues = [];
 let arrayOfConvertedBreakValues = [];
-
 let sumOfworkDayConverted = [];
 let arrayOfConvertedSumOfProductionValues = [];
 let arrayOfConvertedSumOfNPTValues = [];
 let arrayOfConvertedSumOfTrainingValues = [];
 let arrayOfConvertedSumOfBreakValues = [];
-
 const weeklyResultsDiv = document.querySelector('.weeklyResultsDiv');
 const actualResults = document.querySelector('.actualResults');
 let weekSum = {};
@@ -70,6 +65,9 @@ const state = {
 
 
 
+
+
+
 function getProductionTime() {
 
 
@@ -82,20 +80,31 @@ function getProductionTime() {
   let productionMinutes = productionInMinutes - productionHours * 60;
   let productionMinutesRounded = Math.round(productionMinutes);
 
-
-
-
-
   if (nptInMinutes + trainingInMinutes + Number(minutesOfBreak.value) > workDayInMinutes) {
-    document.querySelector('.errorElement').style.backgroundColor = "#dd005d";
+    document.querySelector('.errorElement').classList.add('wrongValue');
   } else {
-    hoursOfProduction.value = productionHours;
-    minutesOfProduction.value = productionMinutesRounded;
-    minutesOfNpt.value = nptInMinutes;
-    document.querySelector('.errorElement').style.backgroundColor = "white";
-  }
 
+
+    hoursOfProduction.value = extraZero(productionHours)
+    minutesOfProduction.value = extraZero(productionMinutesRounded);
+    minutesOfNpt.value = extraZero(nptInMinutes);
+    document.querySelector('.errorElement').classList.remove('wrongValue');
+
+
+  }
 }
+
+
+function extraZero(val) {
+  if (val < 10) {
+    return '0' + val;
+
+  } else {
+    return val;
+  }
+}
+
+
 
 
 function changingProductionTime() {
@@ -110,13 +119,29 @@ function changingProductionTime() {
 
 
   if (ProductionTime + trainingTime + Number(minutesOfBreak.value) > hoursOfWorkPerDay) {
-    document.querySelector('.errorElement').style.backgroundColor = "#dd005d";
+
+    document.querySelector('.errorElement').classList.add('wrongValue');
+
+
   } else {
     minutesOfNpt.value = NPTInMinutes;
     nonProductiveTimeInPercent.value = NPTPourcentRoundend;
-    document.querySelector('.errorElement').style.backgroundColor = "white";
+
+    document.querySelector('.errorElement').classList.remove('wrongValue');
   }
+
 }
+
+
+
+
+function addZero() {
+  if (this.value < 10) {
+    this.value = '0' + this.value;
+  };
+}
+
+
 
 
 
@@ -297,7 +322,7 @@ function downloadWeeklyResults() {
     })
 
 
-    console.log(history);
+
     weekSum = history.reduce(function (previousValue, currentValue) {
       return {
         production: previousValue.production + currentValue.production,
@@ -345,8 +370,6 @@ function firstDayOfWeek() {
   });
 
   firstDay = dateFns.format(firstDay, 'DD.MM.YYYY');
-  console.log(firstDay);
-
   return firstDay
 }
 
@@ -434,16 +457,23 @@ function ifOffline() {
 
 
 
-workDayHours.addEventListener('input', getProductionTime)
+workDayHours.addEventListener('change', getProductionTime)
 workDayMinutes.addEventListener('input', getProductionTime)
 nonProductiveTimeInPercent.addEventListener('input', getProductionTime)
+nonProductiveTimeInPercent.addEventListener('input', changingProductionTime)
+nonProductiveTimeInPercent.addEventListener('input', addZero)
 hoursOnTraining.addEventListener('input', getProductionTime)
 minutesOnTraining.addEventListener('input', getProductionTime)
 minutesOfNpt.addEventListener('input', getProductionTime)
 hoursOfProduction.addEventListener('input', changingProductionTime)
-minutesOfProduction.addEventListener('input', changingProductionTime)
 checkbox.addEventListener('click', updatedResults);
 buttonReset.addEventListener('click', reset);
 list.addEventListener('change', updateResults);
 checkbox.addEventListener('click', updateWeeklyResults);
 checkbox.addEventListener('click', ifOffline);
+workDayHours.addEventListener('input', addZero);
+workDayMinutes.addEventListener('input', addZero);
+hoursOfProduction.addEventListener('input', addZero);
+minutesOfProduction.addEventListener('input', addZero);
+hoursOnTraining.addEventListener('input', addZero);
+minutesOnTraining.addEventListener('input', addZero);

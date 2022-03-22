@@ -3,10 +3,10 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Time Tracker</title>
+  <title>Time tracker</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;700&family=Roboto:wght@100;300&display=swap" rel="stylesheet">
   <link rel='stylesheet' href='style.css'>
 
 
@@ -14,19 +14,22 @@
 </head>
 
 <body>
+
+  <h1 class="title">Time tracker</h1>
+
   <container>
+
     <section class='targets'>
       <div class='label'>today's targets:</div>
       <div class='targetsOfTheDay'>
         <div class='target'>
           <div class='targetsName'>work-day:</div>
-          <div class='hoursAndMinutes'><input class='hoursWorkingDay' type="number" value='8' min='0' max='24'><span>h</span><input class='minutesWorkingDay' type="number" value='00' min='00' max='59'><span>min</span></div>
+          <div class='hoursAndMinutes'><input class='hoursWorkingDay' type="number" value='08' min='00' max='24'><span>h</span><input class='minutesWorkingDay' type="number" value='00' min='00' max='59'><span>min</span></div>
 
         </div>
-        <!--        <div class='errorElement'>* Wrong value</div>-->
         <div class='target'>
           <div class='targetsName'>production:</div>
-          <div class='hoursAndMinutes'><input class='hoursOnProduction' type="number" value='6' min='0' max='24'><span>h</span><input class='minutesOnProduction' type="number" value='17' min='0' max='59'><span>min</span></div>
+          <div class='hoursAndMinutes'><input class='hoursOnProduction' type="number" value='06' min='00' max='24'><span>h</span><input class='minutesOnProduction' type="number" value='17' min='0' max='59'><span>min</span></div>
         </div>
 
         <div class='target'>
@@ -38,7 +41,7 @@
         </div>
         <div class='target'>
           <div class='targetsName'>training:</div>
-          <div class='hoursAndMinutes'><input class='hoursTraining' type="number" value='0' min='0' max='24'><span>h</span><input class='minutesTraining' type="number" value='0' min='0' max='59'><span>min</span></div>
+          <div class='hoursAndMinutes'><input class='hoursTraining' type="number" value='00' min='0' max='24'><span>h</span><input class='minutesTraining' type="number" value='00' min='0' max='59'><span>min</span></div>
         </div>
         <div class='target'>
           <div class='targetsName'>npt in minutes:</div>
@@ -49,11 +52,12 @@
         <div class='target'>
           <div class='targetsName'>break:</div>
           <div class='hoursAndMinutes'>
-            <input class='minutesOfBreak' type="number" value='50' min='0'> <span>min</span>
+            <input class='minutesOfBreak' type="number" value='50' min='00' step="01"> <span>min</span>
           </div>
         </div>
         <button class='reset'>Reset</button>
-        <div class='errorElement'>* Wrong value</div>
+        <!--        <div class='errorElement'>* Wrong value</div>-->
+        <div class='errorElement'></div>
       </div>
     </section>
     <section class='status'>
@@ -71,8 +75,9 @@
           </select>
         </div>
         <div class='timer'>
-          <p class='stopwatchValues'>00:00:00</p>
-
+          <div class='circle'>
+            <p class='stopwatchValues'>00:00:00</p>
+          </div>
 
         </div>
       </div>
@@ -137,16 +142,6 @@
             </div>
           </div>
         </div>
-
-
-
-
-
-
-
-
-
-
         <div class='toggleSwitch'>
           <span class='dailyResults'>daily results</span>
           <label class='switch'>
