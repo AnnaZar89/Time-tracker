@@ -458,3 +458,131 @@ input:checked + .slider:before {
   display: none;
   padding: 5%;
 }
+
+@media (orientation: portrait) {
+
+  html,
+  body {
+
+
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  body {
+    display: block;
+  }
+
+  .title {
+    padding-top: 5%;
+    align-items: flex-start;
+    font-size: 350%;
+  }
+
+  container {
+    padding: 0%;
+  }
+
+  .container {
+    height: 100vh;
+    width: auto;
+    display: inline-flex;
+    scrollbar-width: none;
+    transform: translateX(0);
+    will-change: transform;
+    transition: transform 0.3s ease-out;
+    cursor: grab;
+  }
+
+  .statusAndTimer {
+    margin-top: 8%;
+  }
+
+  .slidess {
+    width: 100vw;
+    height: 90%;
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 5px 5px 50px -1px var(--shadow);
+    user-select: none;
+    border-radius: 50px;
+    flex-direction: column;
+
+
+
+
+  }
+
+
+  .grabbing {
+    cursor: grabbing;
+  }
+
+  .targets,
+  .status,
+  .results {
+    transform: scale(0.9);
+    box-shadow: 5px 5px 40px -1px var(--shadow);
+  }
+
+  .chooseYourStatus span {
+    font-size: 300%;
+  }
+
+
+  .chooseYourStatus .statusToPick {
+    font-size: 40px;
+  }
+
+  option {
+    font-size: 15px;
+  }
+
+  .timer .stopwatchValues {
+    font-size: 66px;
+  }
+
+  .results {
+    font-size: 40px;
+  }
+
+  .results .label {
+    font-size: 55px;
+  }
+
+  .givenStatusLabel {
+    width: 46%;
+  }
+
+  .timeSpentOnGivenStatus .givenStatus > div:nth-child(2) {
+    margin-right: 0;
+    font-size: 40px;
+  }
+}
+
+@media (orientation: portrait) and (min-width: 310px) {
+  /*  .targets .label {*/
+  /*    font-size: 250%;*/
+  /*  }*/
+
+  .label {
+    font-size: 55px;
+    border-radius: 50px;
+  }
+
+  .targets .targetsOfTheDay {
+    font-size: 260%;
+  }
+
+  .hoursAndMinutes input {
+    font-size: 80%;
+  }
+
+  .reset {
+    height: 12%;
+    margin-top: 20%;
+    font-size: 100%;
+    border-radius: 50px;
+  }
+}

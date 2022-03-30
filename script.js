@@ -34,6 +34,7 @@ let weekSum = {};
 /*FIREBASE*/
 
 firebase.initializeApp({
+
   apiKey: "AIzaSyBVA4ajZsSa5EVIJtiYqNrkqPP80Y2QMHQ",
   authDomain: "test-b8ead.firebaseapp.com",
   projectId: "test-b8ead",
@@ -454,6 +455,121 @@ function ifOffline() {
 
   }
 }
+
+
+
+
+
+
+let isDragging = false;
+const slider = document.querySelector('.container');
+console.log(slider);
+
+
+let startPos = 0,
+  currentTranslate = 0,
+  prevTranslate = 0,
+  animationID,
+  currentIndex = 0;
+
+const slidess = Array.from(document.querySelectorAll('.slidess'))
+console.log(slidess);
+
+
+
+
+
+slidess.forEach((slide, index) => {
+  slide.addEventListener('dragstart', (e) => e.preventDefault())
+  slide.addEventListener('touchstart', touchStart(index))
+  slide.addEventListener('touchend', touchEnd)
+  slide.addEventListener('touchmove', touchMove)
+  // mouse events
+  slide.addEventListener('mousedown', touchStart(index))
+  slide.addEventListener('mouseup', touchEnd)
+  slide.addEventListener('mousemove', touchMove)
+  slide.addEventListener('mouseleave', touchEnd)
+})
+
+
+
+
+
+window.addEventListener('resize', setPositionByIndex)
+
+
+
+
+function getPositionX(event) {
+  return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX
+}
+
+function touchStart(index) {
+  return function (event) {
+    currentIndex = index
+
+    startPos = getPositionX(event)
+
+    isDragging = true
+    animationID = requestAnimationFrame(animation);
+    console.log(animationID);
+    slider.classList.add('grabbing')
+  }
+}
+
+
+
+
+function touchMove(event) {
+  if (isDragging) {
+    const currentPosition = getPositionX(event)
+    currentTranslate = prevTranslate + currentPosition - startPos
+    console.log(currentTranslate);
+  }
+}
+
+function touchEnd() {
+  cancelAnimationFrame(animationID)
+  isDragging = false
+  const movedBy = currentTranslate - prevTranslate
+
+  // if moved enough negative then snap to next slide if there is one
+  if (movedBy < -100 && currentIndex < slidess.length - 1) currentIndex += 1
+
+  // if moved enough positive then snap to previous slide if there is one
+  if (movedBy > 100 && currentIndex > 0) currentIndex -= 1
+
+  setPositionByIndex()
+
+  slider.classList.remove('grabbing')
+}
+
+function animation() {
+
+  setSliderPosition()
+  if (isDragging) requestAnimationFrame(animation)
+
+}
+
+function setPositionByIndex() {
+  if (window.innerHeight > window.innerWidth) {
+    currentTranslate = currentIndex * -window.innerWidth
+    prevTranslate = currentTranslate
+    setSliderPosition()
+  }
+}
+
+function setSliderPosition() {
+  if (window.innerHeight > window.innerWidth) {
+    console.log(currentTranslate);
+    slider.style.transform = `translateX(${currentTranslate}px)`
+  }
+}
+
+
+
+
+
 
 
 
