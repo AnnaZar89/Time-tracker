@@ -463,7 +463,7 @@ function ifOffline() {
 
 let isDragging = false;
 const slider = document.querySelector('.container');
-console.log(slider);
+
 
 
 let startPos = 0,
@@ -473,7 +473,7 @@ let startPos = 0,
   currentIndex = 0;
 
 const slidess = Array.from(document.querySelectorAll('.slidess'))
-console.log(slidess);
+
 
 
 
@@ -512,7 +512,7 @@ function touchStart(index) {
 
     isDragging = true
     animationID = requestAnimationFrame(animation);
-    console.log(animationID);
+
     slider.classList.add('grabbing')
   }
 }
@@ -524,7 +524,7 @@ function touchMove(event) {
   if (isDragging) {
     const currentPosition = getPositionX(event)
     currentTranslate = prevTranslate + currentPosition - startPos
-    console.log(currentTranslate);
+
   }
 }
 
@@ -532,12 +532,16 @@ function touchEnd() {
   cancelAnimationFrame(animationID)
   isDragging = false
   const movedBy = currentTranslate - prevTranslate
-
+  if (movedBy < -100 && currentIndex === slidess.length - 1) currentIndex = 0
   // if moved enough negative then snap to next slide if there is one
-  if (movedBy < -100 && currentIndex < slidess.length - 1) currentIndex += 1
+  else if (movedBy < -100 && currentIndex < slidess.length - 1) currentIndex += 1
 
   // if moved enough positive then snap to previous slide if there is one
-  if (movedBy > 100 && currentIndex > 0) currentIndex -= 1
+  else if (movedBy > 100 && currentIndex > 0) currentIndex -= 1
+
+
+  else if (movedBy > 100 && currentIndex === 0) currentIndex = slidess.length - 1
+  console.log(movedBy, currentIndex);
 
   setPositionByIndex()
 
@@ -561,7 +565,7 @@ function setPositionByIndex() {
 
 function setSliderPosition() {
   if (window.innerHeight > window.innerWidth) {
-    console.log(currentTranslate);
+
     slider.style.transform = `translateX(${currentTranslate}px)`
   }
 }
