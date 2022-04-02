@@ -10,10 +10,6 @@ body {
   align-items: center;
   width: 100%;
   height: 100vh;
-  /*  background: rgb(247, 202, 201);*/
-  /*  background: -moz-linear-gradient(-45deg, rgba(247, 202, 201, 1) 0%, rgba(146, 168, 209, 1) 100%);*/
-  /*  background: -webkit-linear-gradient(-45deg, rgba(247, 202, 201, 1) 0%, rgba(146, 168, 209, 1) 100%);*/
-  /*  background: linear-gradient(135deg, rgba(247, 202, 201, 1) 0%, rgba(146, 168, 209, 1) 100%);*/
   background: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
   font-family: 'Roboto Mono';
   letter-spacing: 1px;
@@ -22,40 +18,10 @@ body {
 .title {
 
   text-align: center;
-  /*  color: #fff;*/
   color: #8b80f6;
   font-weight: 600;
   font-size: 3em;
   letter-spacing: 0px;
-  /*text-shadow: 1px 1px rgba(0,
-      0,
-      0,
-      0.02),
-    2px 2px rgba(0,
-      0,
-      0,
-      0.02),
-    3px 3px rgba(0,
-      0,
-      0,
-      0.02),
-    4px 4px rgba(0,
-      0,
-      0,
-      0.02),
-    5px 5px rgba(0,
-      0,
-      0,
-      0.02),
-    6px 6px rgba(0,
-      0,
-      0,
-      0.02),
-    7px 7px rgba(0,
-      0,
-      0,
-      0.02);*/
-
   text-shadow: -2px 1px rgba(0, 0, 0, 0.02), 0px 2px rgba(0, 0, 0, 0.02), 3px 3px rgba(0, 0, 0, 0.02), 2px 2px rgba(0, 0, 0, 0.02), 5px 5px rgba(0, 0, 0, 0.02), 2px 2px rgba(0, 0, 0, 0.02), 2px 1px rgba(0, 0, 0, 0.02);
 }
 
@@ -79,7 +45,6 @@ section {
 container .targets {
   display: flex;
   flex-direction: column;
-  /*  background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);*/
   background: linear-gradient(45deg, #ee9ca7 0%, #ffdde1 100%);
 }
 
@@ -113,9 +78,7 @@ input[type="number"]:focus {
 }
 
 .targets .label {
-  /*  background: white;*/
   background: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
-  /*  color: #e56101;*/
   color: white;
 
 }
@@ -158,7 +121,6 @@ input[type="number"]:focus {
 
 .hoursAndMinutes input:focus {
   color: #dd005d;
-  /*  background: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);*/
 }
 
 .reset {
@@ -168,14 +130,10 @@ input[type="number"]:focus {
   font-size: 20px;
   font-weight: 500;
   color: white;
-  /*  color: #dd005d;*/
   background: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
-  /*  background: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);*/
-  /*  background: #8b80f6;*/
   border: 1px solid #e2ebf0;
   border-radius: 15px;
   border: none;
-  /*  border-radius: 25px;*/
   font-family: 'Ubuntu', sans-serif;
   box-shadow: 0 5px 25px rgb(0 0 0 / 10%);
 
@@ -184,7 +142,6 @@ input[type="number"]:focus {
 
 .reset:hover {
   background: #dd005d;
-  /*  background: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);*/
   color: white;
   cursor: pointer;
 }
@@ -192,16 +149,12 @@ input[type="number"]:focus {
 .status {
   display: flex;
   flex-direction: column;
-
   background: linear-gradient(45deg, #ee9ca7 0%, #ffdde1 100%);
   align-items: center;
 }
 
 .status .label {
-
-
   background: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
-
   color: salmon;
 
 }
@@ -293,14 +246,12 @@ input[type="number"] {
 }
 
 .results {
-  /*  background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);*/
   background: linear-gradient(45deg, #ee9ca7 0%, #ffdde1 100%);
   font-family: 'Roboto Mono';
   font-size: 12px;
 }
 
 .results .label {
-  /*  background-color: #2196F3;*/
   background: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
   font-size: 16px;
 }
@@ -308,9 +259,6 @@ input[type="number"] {
 .results .actualResultsAndToggleSwitch {
   display: flex;
   flex-direction: column;
-
-
-  /*  color: #2196F3;*/
   color: white;
   font-weight: 600;
 }
@@ -375,7 +323,6 @@ input[type="number"] {
   left: 0;
   right: 0;
   bottom: 0;
-  /*  background-color: skyblue;*/
   background: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
   -webkit-transition: .4s;
   transition: .4s;
@@ -495,7 +442,14 @@ input:checked + .slider:before {
     cursor: grab;
   }
 
-  .statusAndTimer {
+  .label {
+    font-size: 55px;
+    border-radius: 50px;
+  }
+
+  .status .statusAndTimer {
+    width: 80%;
+    height: 66%;
     margin-top: 8%;
   }
 
@@ -526,25 +480,54 @@ input:checked + .slider:before {
     box-shadow: 5px 5px 40px -1px var(--shadow);
   }
 
+  .targets .targetsOfTheDay {
+    font-size: 280%;
+    padding: 2%;
+    margin-top: 2%;
+  }
+
+  .hoursAndMinutes input {
+    font-size: 80%;
+  }
+
+  .reset {
+    height: 12%;
+    margin-top: 6%;
+    font-size: 120%;
+    border-radius: 50px;
+  }
+
   .chooseYourStatus span {
-    font-size: 300%;
+
+    font-size: 350%;
   }
 
 
   .chooseYourStatus .statusToPick {
-    font-size: 40px;
+    font-size: 50px;
   }
 
   option {
     font-size: 15px;
   }
 
+  .statusAndTimer .timer {
+    width: 590px;
+    height: 590px;
+  }
+
   .timer .stopwatchValues {
     font-size: 66px;
   }
 
+  .circle {
+    width: 560px;
+    height: 560px;
+
+  }
+
   .results {
-    font-size: 40px;
+    font-size: 45px;
   }
 
   .results .label {
@@ -555,9 +538,17 @@ input:checked + .slider:before {
     width: 46%;
   }
 
+  .actualResults {
+    padding: 5% 6% 10% 0;
+  }
+
+  .weeklyResultsDiv {
+    padding: 5% 6% 10% 0;
+  }
+
   .timeSpentOnGivenStatus .givenStatus > div:nth-child(2) {
     margin-right: 0;
-    font-size: 40px;
+    font-size: 43px;
   }
 
   .switch {
@@ -573,35 +564,9 @@ input:checked + .slider:before {
   }
 
   input:checked + .slider:before {
-
     transform: translateX(48px);
   }
-}
 
-@media (orientation: portrait) and (min-width: 310px) {
-  /*  .targets .label {*/
-  /*    font-size: 250%;*/
-  /*  }*/
-
-  .label {
-    font-size: 55px;
-    border-radius: 50px;
-  }
-
-  .targets .targetsOfTheDay {
-    font-size: 260%;
-  }
-
-  .hoursAndMinutes input {
-    font-size: 80%;
-  }
-
-  .reset {
-    height: 12%;
-    margin-top: 20%;
-    font-size: 100%;
-    border-radius: 50px;
-  }
 
 
 }
