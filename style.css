@@ -16,7 +16,6 @@ body {
 }
 
 .title {
-
   text-align: center;
   color: #8b80f6;
   font-weight: 600;
@@ -49,33 +48,18 @@ container .targets {
 }
 
 .label {
-
+  width: 90%;
   height: 10vh;
-  margin-bottom: 8%;
+  margin: 8% auto;
   color: white;
   text-align: center;
   line-height: 10vh;
   border-radius: 15px;
-
-  width: 90%;
-  margin: 8% auto;
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
 
-
-
-
 }
 
-input[type="number"] {
-  border: none;
 
-}
-
-input[type="number"]:focus {
-
-  outline: none;
-
-}
 
 .targets .label {
   background: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
@@ -98,8 +82,8 @@ input[type="number"]:focus {
 
 .target .targetsName {
   width: 75%;
-  text-align: end;
   margin-right: 6%;
+  text-align: end;
 }
 
 .hoursAndMinutes {
@@ -121,6 +105,17 @@ input[type="number"]:focus {
 
 .hoursAndMinutes input:focus {
   color: #dd005d;
+}
+
+
+
+input[type="number"] {
+  border: none;
+
+}
+
+input[type="number"]:focus {
+  outline: none;
 }
 
 .reset {
@@ -166,7 +161,6 @@ input[type="number"]:focus {
 
 input[type="number"] {
   -webkit-appearance: none;
-
   width: 35%;
 
 }
@@ -190,18 +184,16 @@ input[type="number"] {
   align-items: center;
   width: 70%;
   height: 35vh;
-
   margin-bottom: 8%;
   color: white;
   text-align: center;
-
   border-radius: 50%;
-
   box-shadow: 0 5px 25px rgb(0 0 0 / 20%);
-
   background: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
-
 }
+
+
+
 
 .circle {
   display: flex;
@@ -209,7 +201,6 @@ input[type="number"] {
   align-items: center;
   width: 95%;
   height: 95%;
-
   background: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
   margin: 0 auto;
   border-radius: 50%;
@@ -225,7 +216,6 @@ input[type="number"] {
 
 .chooseYourStatus span {
   display: inline-block;
-
   width: 100%;
   margin-bottom: 8%;
   text-align: center;
@@ -424,7 +414,7 @@ input:checked + .slider:before {
   .title {
     padding-top: 5%;
     align-items: flex-start;
-    font-size: 350%;
+    font-size: 150%;
   }
 
   container {
@@ -443,8 +433,8 @@ input:checked + .slider:before {
   }
 
   .label {
-    font-size: 55px;
-    border-radius: 50px;
+    font-size: 20px;
+    border-radius: 20px;
   }
 
   .status .statusAndTimer {
@@ -460,7 +450,7 @@ input:checked + .slider:before {
     transition: transform 0.3s ease-in-out;
     box-shadow: 5px 5px 50px -1px var(--shadow);
     user-select: none;
-    border-radius: 50px;
+    border-radius: 30px;
     flex-direction: column;
 
 
@@ -481,7 +471,7 @@ input:checked + .slider:before {
   }
 
   .targets .targetsOfTheDay {
-    font-size: 280%;
+    font-size: 83%;
     padding: 2%;
     margin-top: 2%;
   }
@@ -493,49 +483,56 @@ input:checked + .slider:before {
   .reset {
     height: 12%;
     margin-top: 6%;
+    margin-bottom: 5%;
     font-size: 120%;
     border-radius: 50px;
   }
 
   .chooseYourStatus span {
 
-    font-size: 350%;
+    font-size: 120%;
   }
 
 
   .chooseYourStatus .statusToPick {
-    font-size: 50px;
+    font-size: 15px;
   }
 
   option {
     font-size: 15px;
   }
 
+  .statusAndTimer .chooseYourStatus {
+    margin-bottom: 10%;
+  }
+
   .statusAndTimer .timer {
-    width: 590px;
-    height: 590px;
+    width: 220px;
+    height: 220px;
+    margin-bottom: 0;
   }
 
   .timer .stopwatchValues {
-    font-size: 66px;
+    font-size: 30px;
   }
 
   .circle {
-    width: 560px;
-    height: 560px;
+    width: 200px;
+    height: 200px;
 
   }
 
   .results {
-    font-size: 45px;
+    font-size: 15px;
   }
 
   .results .label {
-    font-size: 55px;
+    font-size: 20px;
   }
 
   .givenStatusLabel {
-    width: 46%;
+    width: 43%;
+    margin-right: 4%;
   }
 
   .actualResults {
@@ -548,25 +545,591 @@ input:checked + .slider:before {
 
   .timeSpentOnGivenStatus .givenStatus > div:nth-child(2) {
     margin-right: 0;
-    font-size: 43px;
+    font-size: 13px;
   }
 
   .switch {
-    width: 25%;
-    height: 60px;
+    width: 100px;
+    height: 32px;
+  }
+
+  .toggleSwitch {
+    margin-top: 2%;
+    align-items: center;
+  }
+
+  .slider {
+    top: 5px;
   }
 
   .slider:before {
-    top: 8px;
-    left: 7px;
-    height: 40px;
-    width: 40px;
+    top: 3px;
+    left: 3px;
+    height: 20px;
+    width: 20px;
   }
 
   input:checked + .slider:before {
-    transform: translateX(48px);
+    transform: translateX(23px);
+
+  }
+
+  .dailyResults,
+  .weeklyResults {
+    width: 80%;
+  }
+
+  .dailyResults {
+    padding: 0 2%;
+  }
+
+}
+
+@media (orientation: portrait) and (min-width:280px) and (max-width:300px) {
+  .targets .targetsOfTheDay {
+    margin-top: 10%;
+  }
+
+  .reset {
+    margin-top: 18%;
+  }
+
+  .wrongValue {
+    margin-left: 50%;
+  }
+
+  .chooseYourStatus span {
+    margin-bottom: 15%;
+  }
+
+  .results .label {
+    font-size: 18px;
+  }
+}
+
+@media (orientation: portrait) and (min-width:360px) {
+  .label {
+    font-size: 24px;
   }
 
 
+
+
+
+  .targets .targetsOfTheDay {
+    font-size: 120%;
+    padding-top: 10%;
+
+  }
+
+
+  .reset {
+    margin-top: 15%;
+
+  }
+
+  .wrongValue {
+    font-size: 18px;
+    margin-left: 50%;
+  }
+
+  .chooseYourStatus span {
+
+    font-size: 140%;
+    margin-bottom: 14%;
+  }
+
+  .chooseYourStatus .statusToPick {
+    font-size: 20px;
+  }
+
+  .statusAndTimer .timer {
+    width: 280px;
+    height: 280px;
+
+  }
+
+  .timer .stopwatchValues {
+    font-size: 35px;
+  }
+
+  .circle {
+    width: 260px;
+    height: 260px;
+
+  }
+
+  .results {
+    font-size: 17px;
+  }
+
+  .results .label {
+    font-size: 23px;
+  }
+
+  .actualResults {
+    padding: 12% 6% 10% 0;
+  }
+
+  .weeklyResultsDiv {
+    padding: 12% 6% 10% 0;
+  }
+
+  .timeSpentOnGivenStatus .givenStatus > div:nth-child(2) {
+    font-size: 16px;
+  }
+
+  .toggleSwitch {
+    margin-top: 10%;
+  }
+
+
+
+}
+
+@media (orientation: portrait) and (min-width:370px)and (max-width:380px) {
+  .slidess {
+    height: 95%;
+  }
+
+  .targets .targetsOfTheDay {
+
+    padding-top: 2%;
+  }
+
+  .reset {
+    margin-top: 5%;
+  }
+}
+
+
+
+@media (orientation: portrait) and (min-width:540px) {
+  .title {
+    font-size: 200%;
+  }
+
+  .targets .targetsOfTheDay {
+    padding-top: 0;
+    font-size: 130%;
+  }
+
+  .label {
+    margin: 5% auto;
+    font-size: 30px;
+  }
+
+  .slidess {
+    height: 92%;
+  }
+
+  .reset {
+    margin-top: 4%;
+    margin-left: 10%;
+    display: inline-block;
+    margin-left: 10%;
+  }
+
+  .wrongValue {
+    display: inline-block;
+    margin-left: 5%;
+    width: 40%;
+    font-size: 23px;
+  }
+
+  .results .label {
+    font-size: 30px;
+  }
+
+
+  .chooseYourStatus span {
+    font-size: 180%;
+    margin-bottom: 8%;
+  }
+
+  .chooseYourStatus .statusToPick {
+    font-size: 22px;
+  }
+
+  .givenStatusLabel {
+    width: 50%;
+
+  }
+
+  .timeSpentOnGivenStatus .givenStatus > div:nth-child(2) {
+    font-size: 22px;
+  }
+
+  .results {
+    font-size: 22px;
+  }
+
+  .actualResults,
+  .weeklyResultsDiv {
+    padding: 6% 4% 6% 0;
+  }
+}
+
+@media (orientation: portrait) and (min-width:760px) {
+  .label {
+    font-size: 40px;
+  }
+
+  .results .label {
+    font-size: 40px;
+  }
+
+  .targets .targetsOfTheDay {
+    padding-top: 0;
+    font-size: 190%;
+  }
+
+  .wrongValue {
+    font-size: 28px;
+  }
+
+  .chooseYourStatus span {
+    font-size: 250%;
+    margin-bottom: 10%;
+  }
+
+  .chooseYourStatus .statusToPick {
+    font-size: 30px;
+  }
+
+  .statusAndTimer .timer {
+    width: 380px;
+    height: 380px;
+  }
+
+  .circle {
+    width: 350px;
+    height: 350px;
+  }
+
+  .timer .stopwatchValues {
+    font-size: 55px;
+  }
+
+  .timeSpentOnGivenStatus .givenStatus > div:nth-child(2) {
+    font-size: 30px;
+  }
+
+  .results {
+    font-size: 30px;
+  }
+
+  .switch {
+    width: 130px;
+    height: 44px;
+  }
+
+  .slider:before {
+    height: 30px;
+    width: 30px;
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(32px);
+  }
+}
+
+@media (orientation: portrait) and (min-width:912px) {
+  .title {
+    font-size: 300%;
+  }
+
+  .slidess {
+    max-width: 910px;
+    max-height: 1280px;
+  }
+
+  .targets .targetsOfTheDay {
+    font-size: 270%;
+  }
+
+  .label {
+    font-size: 60px;
+  }
+
+  .results .label {
+    font-size: 60px;
+  }
+
+  .reset {
+    font-size: 140%;
+  }
+
+  .chooseYourStatus span {
+    font-size: 360%;
+    margin-bottom: 9%;
+  }
+
+  .chooseYourStatus .statusToPick {
+    font-size: 50px;
+  }
+
+  .statusAndTimer .timer {
+    width: 500px;
+    height: 500px;
+  }
+
+  .circle {
+    width: 460px;
+    height: 460px;
+  }
+
+  .results {
+    font-size: 40px;
+  }
+
+  .timeSpentOnGivenStatus .givenStatus > div:nth-child(2) {
+    font-size: 40px;
+  }
+
+  .toggleSwitch {
+    margin-top: 0%;
+  }
+
+  .switch {
+    width: 200px;
+    height: 74px;
+  }
+
+  .slider:before {
+    height: 50px;
+    width: 50px;
+    top: 7px;
+    left: 6px;
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(42px);
+  }
+}
+
+/*@media (orientation: landscape) and (max-width:540px) {
+  container {
+    width: 100vw;
+  }
+
+  .title {
+    font-size: 1.5em;
+  }
+}*/
+
+@media (orientation: landscape) and (max-width:540px) {
+
+  html,
+  body {
+
+
+    /*    height: 100%;*/
+    /*    width: 100%;*/
+    /*    overflow: hidden;*/
+  }
+
+  body {
+    display: block;
+  }
+
+  .title {
+    padding-top: 0;
+    /*    align-items: flex-start;*/
+    font-size: 100%;
+  }
+
+  container {
+    padding: 0%;
+  }
+
+  .container {
+    height: 100vh;
+    width: auto;
+    display: inline-flex;
+    scrollbar-width: none;
+    transform: translateX(0);
+    will-change: transform;
+    transition: transform 0.3s ease-out;
+    cursor: grab;
+  }
+
+  .label {
+    font-size: 20px;
+    border-radius: 30px;
+    margin: 3% auto;
+  }
+
+  .status .statusAndTimer {
+    width: 80%;
+    height: 66%;
+    margin-top: 8%;
+  }
+
+  .slidess {
+    width: 100vw;
+    height: 95%;
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 5px 5px 50px -1px var(--shadow);
+    user-select: none;
+    border-radius: 30px;
+    flex-direction: column;
+
+
+
+
+  }
+
+
+  .grabbing {
+    cursor: grabbing;
+  }
+
+  .targets,
+  .status,
+  .results {
+    transform: scale(0.9);
+    box-shadow: 5px 5px 40px -1px var(--shadow);
+  }
+
+  .targets .targetsOfTheDay {
+    font-size: 83%;
+    padding: 0;
+    margin-top: 0;
+  }
+
+  .targetsOfTheDay .target {
+    margin-bottom: 1%;
+  }
+
+  .hoursAndMinutes input {
+    font-size: 80%;
+  }
+
+  .reset {
+    height: 12%;
+    margin-top: 4%;
+    margin-bottom: 5%;
+    margin-left: 10%;
+    font-size: 120%;
+    border-radius: 50px;
+  }
+
+  .wrongValue {
+    display: inline-block;
+    width: 30%;
+    margin-left: 5%;
+  }
+
+  .status .statusAndTimer {
+    flex-direction: row;
+    width: 100%;
+    padding: 8%;
+    margin-top: 2%;
+  }
+
+  .chooseYourStatus span {
+
+    font-size: 120%;
+  }
+
+
+  .chooseYourStatus .statusToPick {
+    font-size: 15px;
+  }
+
+  option {
+    font-size: 15px;
+  }
+
+  .statusAndTimer .chooseYourStatus {
+    width: 50%;
+    margin-bottom: 10%;
+    margin-right: 8%;
+  }
+
+  .statusAndTimer .timer {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 0;
+  }
+
+  .timer .stopwatchValues {
+    font-size: 30px;
+  }
+
+  .circle {
+    width: 180px;
+    height: 180px;
+
+  }
+
+  .results {
+    font-size: 15px;
+  }
+
+  .results .label {
+    font-size: 20px;
+  }
+
+  .givenStatusLabel {
+    width: 43%;
+    margin-right: 4%;
+  }
+
+  .actualResults {
+
+    padding: 5% 6% 5% 0;
+
+  }
+
+  .weeklyResultsDiv {
+    padding: 5% 6% 5% 0;
+  }
+
+  .timeSpentOnGivenStatus .givenStatus {
+    margin-bottom: 1%;
+  }
+
+  .timeSpentOnGivenStatus .givenStatus > div:nth-child(2) {
+    margin-right: 0;
+    font-size: 13px;
+  }
+
+  .switch {
+    width: 100px;
+    height: 32px;
+  }
+
+  .toggleSwitch {
+    margin-top: 2%;
+    align-items: center;
+  }
+
+  .slider {
+    top: 5px;
+  }
+
+  .slider:before {
+    top: 3px;
+    left: 3px;
+    height: 20px;
+    width: 20px;
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(23px);
+
+  }
+
+  .dailyResults,
+  .weeklyResults {
+    width: 80%;
+  }
+
+  .dailyResults {
+    padding: 0 2%;
+  }
 
 }
