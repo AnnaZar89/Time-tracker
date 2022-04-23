@@ -54,8 +54,9 @@ EXAMPLE: You are full-time employee with 8-hour shift (40 hours per week). At wo
 ## Screenshots
 
   Web version
-  
+<div float="left" align="middle"> 
 <img src="./img/time-tracker-web-version.png" width="600px" height="300px">
+</div>
 
 
   Mobile version
