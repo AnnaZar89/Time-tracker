@@ -61,7 +61,7 @@ EXAMPLE: You are full-time employee with 8-hour shift (40 hours per week). At wo
   Mobile version
   
 <p float="left" align="middle">
-<img src="./img/time-tracker-mobile-version-1.jpg" width="300px" height="500px">
+<img src="./img/time-tracker-mobile-version-1.jpg" width="400px" height="500px">
 <img src="./img/time-tracker-mobile-version-2.jpg" width="300px" height="500px">
 <img src="./img/time-tracker-mobile-version-3.jpg" width="300px" height="500px">
 </p>
