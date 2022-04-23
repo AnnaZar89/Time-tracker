@@ -55,13 +55,13 @@ EXAMPLE: You are full-time employee with 8-hour shift (40 hours per week). At wo
 
   Web version
   
-<img src="./img/time-tracker-web-version.png" width="500px" height="300px">
+<img src="./img/time-tracker-web-version.png" width="600px" height="300px">
 
 
   Mobile version
   
 <p float="left" align="middle">
-<img src="./img/time-tracker-mobile-version-1.jpg" width="400px" height="500px">
+<img src="./img/time-tracker-mobile-version-1.jpg" width="300px" height="500px">
 <img src="./img/time-tracker-mobile-version-2.jpg" width="300px" height="500px">
 <img src="./img/time-tracker-mobile-version-3.jpg" width="300px" height="500px">
 </p>
