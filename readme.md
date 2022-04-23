@@ -11,7 +11,7 @@
 
 * based on the given % of NPT (Non-Productive Time), the application also calculates the NPT in minutes including the planned training
 
-EXAMPLE: You are full-time employee with 8-hour shift (40 hours per week). At work your manager asked you to not exceed 11% of NPT. Every employee has a right to the 50 minutes of break, the rest of the time you should spend on production. The calculator allows you to evaluate the exact values of production time you should spend on, as well as it helps you to transform the  percent of NPT for the values of NPT in minutes. 
+  EXAMPLE: You are full-time employee with 8-hour shift (40 hours per week). At work your manager asked you to not exceed 11% of NPT. Every employee has a right to   the 50 minutes of break, the rest of the time you should spend on production. The calculator allows you to evaluate the exact values of production time you should   spend on, as well as it helps you to transform the  percent of NPT for the values of NPT in minutes. 
 
 2. Your actual status:
 - in this section, you select the appropriate status for your current activity, and the clock counts down the time spent on that status
