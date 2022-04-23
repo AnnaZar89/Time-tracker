@@ -8,9 +8,13 @@
 1. Today's targets: 
 - the application calculates daily targets of:
 * planned production time, based on % of NPT available for user and based on the planned training time
-* based on the given % of NPT, the application also calculates the NPT in minutes including the planned training
+
+* based on the given % of NPT (Non-Productive Time), the application also calculates the NPT in minutes including the planned training
+
+EXAMPLE: You are full-time employee with 8-hour shift (40 hours per week). At work your manager asked you to not exceed 11% of NPT. Every employee has a right to the 50 minutes of break, the rest of the time you should spend on production. The calculator allows you to evaluate the exact values of production time you should spend on, as well as it helps you to transform the  percent of NPT for the values of NPT in minutes. 
 
 2. Your actual status:
+- in this section, you select the appropriate status for your current activity, and the clock counts down the time spent on that status
 
 3. Yours daily and weekly results:
 - this application's section aims at user controlling and monitoring their daily and weekly targets;
